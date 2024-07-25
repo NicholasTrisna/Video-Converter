@@ -1,4 +1,4 @@
-# Red Halo Audio and Video Converter (Open Source)
+# Red Halo Audio and Video Converter
 <img src="https://redhalo.net/Images/logo.png" alt="Red Halo Logo" width="100">
 
 Welcome to the Red Halo Audio and Video Converter! This application allows you to convert audio and video files between various formats with ease.
