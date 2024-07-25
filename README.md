@@ -1,8 +1,6 @@
 # Red Halo Audio and Video Converter (Open Source)
 <img src="https://redhalo.net/Images/logo.png" alt="Red Halo Logo" width="100">
 
-[GitHub Release](https://github.com/NicholasTrisna/Video-Converter/releases)
-
 Welcome to the Red Halo Audio and Video Converter! This application allows you to convert audio and video files between various formats with ease.
 
 > [!IMPORTANT]
@@ -16,6 +14,8 @@ Welcome to the Red Halo Audio and Video Converter! This application allows you t
 - Compatible with Windows.
 
 # Releases
+[Versions](https://github.com/NicholasTrisna/Video-Converter/releases)
+
 [Download Version 1.0 LTS [Windows]](https://github.com/NicholasTrisna/Video-Converter/blob/main/dist/Red%20Halo%20Converter.exe)
 
 # Manual Installation
