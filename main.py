@@ -5,6 +5,7 @@ from threading import Thread
 import os
 from PIL import Image, ImageTk
 import customtkinter as ctk
+from queue import Queue
 
 class VideoConverterApp:
     def __init__(self, root):
@@ -30,6 +31,9 @@ class VideoConverterApp:
         self.home_tab = self.tabview.add("Home")
         self.video_tab = self.tabview.add("Video Conversion")
         self.audio_tab = self.tabview.add("Audio Conversion")
+
+        # Task queue
+        self.task_queue = Queue()
 
         # Setup Tabs
         self.setup_home_tab()
@@ -99,22 +103,20 @@ class VideoConverterApp:
         format_menu.grid(row=5, column=1, padx=10, pady=15, sticky='ew')
 
         # Convert button
-        self.create_rounded_button(self.video_tab, "Convert", self.start_conversion, row=6, column=1, font=("Arial", 20, "bold"), button_height=50, button_width=200)
+        self.create_rounded_button(self.video_tab, "Convert", self.add_conversion_task, row=6, column=1, font=("Arial", 20, "bold"), button_height=50, button_width=200)
 
         # Status label and spinner
         self.status_label = ctk.CTkLabel(self.video_tab, text="", font=("Arial", 20), text_color="#FFFFFF")
         self.status_label.grid(row=7, column=0, columnspan=3, pady=15, sticky='n')
-        self.spinner = ctk.CTkLabel(self.video_tab, text="", font=("Arial", 36), text_color="#FFFFFF")
-        self.spinner.grid(row=8, column=0, columnspan=3, pady=15, sticky='n')
-
-        # Spinner animation
-        self.spinner_sequence = ["|", "/", "-", "\\"]
-        self.spinner_index = 0
 
         # Add Back button
         back_button = ctk.CTkButton(self.video_tab, text="Back", command=self.show_home_screen, 
                                     fg_color="#E53935", hover_color="#D32F2F", text_color="#FFFFFF", font=("Arial", 20, "bold"), width=200, height=50)
         back_button.grid(row=9, column=0, padx=20, pady=20, sticky='w')
+
+        # Task list
+        self.task_list = ctk.CTkLabel(self.video_tab, text="", font=("Arial", 16), text_color="#FFFFFF", justify="left")
+        self.task_list.grid(row=8, column=0, columnspan=3, pady=15, sticky='n')
 
     def setup_audio_tab(self):
         self.audio_tab.grid_columnconfigure(0, weight=1)
@@ -150,65 +152,13 @@ class VideoConverterApp:
         # Store the path label as an attribute
         if label_text.startswith("Input"):
             self.input_file_label = path_label
-        elif label_text.startswith("Output"):
+        else:
             self.output_folder_label = path_label
 
-    def create_rounded_button(self, parent, text, command, row, column, font=("Arial", 20), button_height=50, button_width=150):
-        button = ctk.CTkButton(parent, text=text, command=command, fg_color="#E53935", hover_color="#D32F2F", text_color="#FFFFFF", font=font, width=button_width, height=button_height)
-        button.grid(row=row, column=column, padx=20, pady=15, sticky='ew')
-
-    def select_input_file(self):
-        file_path = filedialog.askopenfilename(filetypes=[("Video Files", "*.mp4 *.avi *.mov")])
-        if file_path:
-            self.input_file_label.configure(text=file_path)
-
-    def select_output_folder(self):
-        folder_path = filedialog.askdirectory()
-        if folder_path:
-            self.output_folder_label.configure(text=folder_path)
-
-    def start_conversion(self):
-        input_file = self.input_file_label.cget("text")
-        output_folder = self.output_folder_label.cget("text")
-        output_file_name = self.output_file_name_entry.get()
-        output_format = self.format_var.get()
-
-        if not input_file or not output_folder or not output_file_name:
-            messagebox.showerror("Error", "Please select input file, output folder, and provide output file name.")
-            return
-
-        output_file_path = os.path.join(output_folder, f"{output_file_name}.{output_format}")
-
-        # Start conversion in a separate thread to avoid blocking the UI
-        conversion_thread = Thread(target=self.convert_video, args=(input_file, output_file_path))
-        conversion_thread.start()
-
-    def convert_video(self, input_file, output_file_path):
-        self.update_status("Converting...")
-        try:
-            cap = cv2.VideoCapture(input_file)
-            width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-            height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-            fps = cap.get(cv2.CAP_PROP_FPS)
-
-            # Use mp4v codec for better compatibility
-            fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-            out = cv2.VideoWriter(output_file_path, fourcc, fps, (width, height))
-
-            while cap.isOpened():
-                ret, frame = cap.read()
-                if not ret:
-                    break
-                out.write(frame)
-
-            cap.release()
-            out.release()
-            self.update_status("Conversion Complete!")
-        except Exception as e:
-            self.update_status(f"Error: {str(e)}")
-
-    def update_status(self, message):
-        self.status_label.configure(text=message)
+    def create_rounded_button(self, parent, text, command, row, column, font, button_height, button_width):
+        button = ctk.CTkButton(parent, text=text, command=command, font=font, fg_color="#E53935", hover_color="#D32F2F", text_color="#FFFFFF", corner_radius=15, width=button_width, height=button_height)
+        button.grid(row=row, column=column, pady=10, padx=10, sticky='ew')
+        return button
 
     def show_home_screen(self):
         self.tabview.set("Home")
@@ -218,6 +168,75 @@ class VideoConverterApp:
 
     def open_audio_converter(self):
         self.tabview.set("Audio Conversion")
+
+    def select_input_file(self):
+        file_path = filedialog.askopenfilename(filetypes=[("Video Files", "*.mp4 *.avi *.mov"), ("All Files", "*.*")])
+        if file_path:
+            self.input_file_label.configure(text=file_path)
+
+    def select_output_folder(self):
+        folder_path = filedialog.askdirectory()
+        if folder_path:
+            self.output_folder_label.configure(text=folder_path)
+
+    def add_conversion_task(self):
+        input_file = self.input_file_label.cget("text")
+        output_folder = self.output_folder_label.cget("text")
+        output_file_name = self.output_file_name_entry.get().strip()
+        format = self.format_var.get()
+
+        if input_file == "No file selected" or not os.path.isfile(input_file):
+            messagebox.showerror("Error", "Please select a valid input file.")
+            return
+
+        if output_folder == "No file selected" or not os.path.isdir(output_folder):
+            messagebox.showerror("Error", "Please select a valid output folder.")
+            return
+
+        if not output_file_name:
+            messagebox.showerror("Error", "Please enter a valid output file name.")
+            return
+
+        # Add task to the queue
+        self.task_queue.put((input_file, output_folder, output_file_name, format))
+        self.update_task_list()
+        self.start_conversion_thread()
+
+    def update_task_list(self):
+        tasks = list(self.task_queue.queue)
+        task_display = "\n".join([f"Task {i+1}: {task[2]}.{task[3]}" for i, task in enumerate(tasks)])
+        self.task_list.configure(text=f"Pending Tasks:\n{task_display}")
+
+    def start_conversion_thread(self):
+        if not self.task_queue.empty():
+            task = self.task_queue.get()
+            Thread(target=self.convert_video, args=task).start()
+
+    def convert_video(self, input_file, output_folder, output_file_name, format):
+        self.status_label.configure(text="Converting...")
+        output_file = os.path.join(output_folder, f"{output_file_name}.{format}")
+
+        # Video conversion logic
+        cap = cv2.VideoCapture(input_file)
+        fourcc = cv2.VideoWriter_fourcc(*'XVID' if format == 'avi' else 'mp4v')
+        out = cv2.VideoWriter(output_file, fourcc, 30.0, (int(cap.get(3)), int(cap.get(4))))
+
+        while cap.isOpened():
+            ret, frame = cap.read()
+            if not ret:
+                break
+            out.write(frame)
+
+        cap.release()
+        out.release()
+
+        self.status_label.configure(text=f"Conversion completed: {output_file_name}.{format}")
+
+        # Update task list
+        self.update_task_list()
+
+        # Start next task if available
+        self.start_conversion_thread()
 
 if __name__ == "__main__":
     root = tk.Tk()
