@@ -169,6 +169,7 @@ imports:
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
  &#8226;   <a href="#pyi_rth_pkgres.py">pyi_rth_pkgres.py</a>
  &#8226;   <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
+ &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#re._casefix">re._casefix</a>
  &#8226;   <a href="#re._compiler">re._compiler</a>
@@ -3145,7 +3146,8 @@ imported by:
   <a name="_multibytecodec"></a>
   <tt>_multibytecodec</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
-    <a href="#encodings.big5">encodings.big5</a>
+    <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#encodings.big5">encodings.big5</a>
  &#8226;   <a href="#encodings.big5hkscs">encodings.big5hkscs</a>
  &#8226;   <a href="#encodings.cp932">encodings.cp932</a>
  &#8226;   <a href="#encodings.cp949">encodings.cp949</a>
@@ -5061,10 +5063,226 @@ imported by:
 
 <div class="node">
   <a name="charset_normalizer"></a>
-  <a target="code" href="" type="text/plain"><tt>charset_normalizer</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/__init__.py" type="text/plain"><tt>charset_normalizer</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.legacy">charset_normalizer.legacy</a>
+ &#8226;   <a href="#charset_normalizer.md__mypyc">charset_normalizer.md__mypyc</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#charset_normalizer.version">charset_normalizer.version</a>
+ &#8226;   <a href="#logging">logging</a>
+
+  </div>
+  <div class="import">
 imported by:
-    <a href="#numpy.f2py.crackfortran">numpy.f2py.crackfortran</a>
+    <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.legacy">charset_normalizer.legacy</a>
+ &#8226;   <a href="#charset_normalizer.md">charset_normalizer.md</a>
+ &#8226;   <a href="#charset_normalizer.md__mypyc">charset_normalizer.md__mypyc</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#charset_normalizer.version">charset_normalizer.version</a>
+ &#8226;   <a href="#numpy.f2py.crackfortran">numpy.f2py.crackfortran</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.api"></a>
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/api.py" type="text/plain"><tt>charset_normalizer.api</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.md">charset_normalizer.md</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.legacy">charset_normalizer.legacy</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.cd"></a>
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/cd.py" type="text/plain"><tt>charset_normalizer.cd</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.md">charset_normalizer.md</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#codecs">codecs</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.constant"></a>
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/constant.py" type="text/plain"><tt>charset_normalizer.constant</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#codecs">codecs</a>
+ &#8226;   <a href="#encodings.aliases">encodings.aliases</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.legacy">charset_normalizer.legacy</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.legacy"></a>
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/legacy.py" type="text/plain"><tt>charset_normalizer.legacy</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer">charset_normalizer</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.md"></a>
+  <tt>charset_normalizer.md</tt> <span class="moduletype"><tt>F:\Projects\Video Converter\myenv\Lib\site-packages\charset_normalizer\md.cp312-win_amd64.pyd</tt></span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.md__mypyc"></a>
+  <tt>charset_normalizer.md__mypyc</tt> <span class="moduletype"><tt>F:\Projects\Video Converter\myenv\Lib\site-packages\charset_normalizer\md__mypyc.cp312-win_amd64.pyd</tt></span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer">charset_normalizer</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.models"></a>
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/models.py" type="text/plain"><tt>charset_normalizer.models</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#encodings.aliases">encodings.aliases</a>
+ &#8226;   <a href="#hashlib">hashlib</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.utils"></a>
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/utils.py" type="text/plain"><tt>charset_normalizer.utils</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_multibytecodec">_multibytecodec</a>
+ &#8226;   <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#codecs">codecs</a>
+ &#8226;   <a href="#encodings.aliases">encodings.aliases</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unicodedata">unicodedata</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="charset_normalizer.version"></a>
+  <a target="code" href="///F:/Projects/Video%20Converter/myenv/Lib/site-packages/charset_normalizer/version.py" type="text/plain"><tt>charset_normalizer.version</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#charset_normalizer">charset_normalizer</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#charset_normalizer">charset_normalizer</a>
 
   </div>
 
@@ -5123,6 +5341,9 @@ imports:
 imported by:
     <a href="#PIL.PdfParser">PIL.PdfParser</a>
  &#8226;   <a href="#_pickle">_pickle</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
  &#8226;   <a href="#encodings">encodings</a>
  &#8226;   <a href="#encodings.ascii">encodings.ascii</a>
  &#8226;   <a href="#encodings.base64_codec">encodings.base64_codec</a>
@@ -5304,6 +5525,7 @@ imported by:
  &#8226;   <a href="#asyncio.selector_events">asyncio.selector_events</a>
  &#8226;   <a href="#asyncio.sslproto">asyncio.sslproto</a>
  &#8226;   <a href="#asyncio.streams">asyncio.streams</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
  &#8226;   <a href="#collections.abc">collections.abc</a>
  &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#configparser">configparser</a>
@@ -8310,7 +8532,10 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#encodings">encodings</a>
+    <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#encodings">encodings</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#main.py">main.py</a>
 
@@ -10752,6 +10977,8 @@ imported by:
  &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
  &#8226;   <a href="#asyncio.threads">asyncio.threads</a>
  &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
@@ -11033,7 +11260,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#hmac">hmac</a>
+    <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#hmac">hmac</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
@@ -11251,7 +11479,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#cv2">cv2</a>
+    <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#cv2">cv2</a>
  &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib._abc">importlib._abc</a>
  &#8226;   <a href="#importlib._bootstrap">importlib._bootstrap</a>
@@ -12398,7 +12628,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#customtkinter.windows.widgets.theme.theme_manager">customtkinter.windows.widgets.theme.theme_manager</a>
+    <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#customtkinter.windows.widgets.theme.theme_manager">customtkinter.windows.widgets.theme.theme_manager</a>
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
@@ -12568,6 +12799,9 @@ imported by:
  &#8226;   <a href="#PIL.TiffImagePlugin">PIL.TiffImagePlugin</a>
  &#8226;   <a href="#asyncio.futures">asyncio.futures</a>
  &#8226;   <a href="#asyncio.log">asyncio.log</a>
+ &#8226;   <a href="#charset_normalizer">charset_normalizer</a>
+ &#8226;   <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
  &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#hashlib">hashlib</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
@@ -20301,6 +20535,7 @@ imported by:
  &#8226;   <a href="#backports.tarfile">backports.tarfile</a>
  &#8226;   <a href="#bdb">bdb</a>
  &#8226;   <a href="#bz2">bz2</a>
+ &#8226;   <a href="#charset_normalizer.api">charset_normalizer.api</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#configparser">configparser</a>
@@ -20448,6 +20683,7 @@ imports:
  &#8226;   <a href="#packaging._musllinux">packaging._musllinux</a>
  &#8226;   <a href="#packaging.markers">packaging.markers</a>
  &#8226;   <a href="#packaging.requirements">packaging.requirements</a>
+ &#8226;   <a href="#packaging.version">packaging.version</a>
  &#8226;   <a href="#pkg_resources">pkg_resources</a>
 
   </div>
@@ -20797,6 +21033,7 @@ imported by:
     <a href="#PIL.Image">PIL.Image</a>
  &#8226;   <a href="#customtkinter.windows.ctk_tk">customtkinter.windows.ctk_tk</a>
  &#8226;   <a href="#customtkinter.windows.ctk_toplevel">customtkinter.windows.ctk_toplevel</a>
+ &#8226;   <a href="#packaging">packaging</a>
  &#8226;   <a href="#packaging.metadata">packaging.metadata</a>
  &#8226;   <a href="#packaging.specifiers">packaging.specifiers</a>
  &#8226;   <a href="#packaging.utils">packaging.utils</a>
@@ -21510,6 +21747,7 @@ imports:
 imported by:
     <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#more_itertools.more">more_itertools.more</a>
  &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
  &#8226;   <a href="#multiprocessing.dummy.connection">multiprocessing.dummy.connection</a>
@@ -21612,6 +21850,8 @@ imported by:
  &#8226;   <a href="#ast">ast</a>
  &#8226;   <a href="#backports.tarfile">backports.tarfile</a>
  &#8226;   <a href="#base64">base64</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#csv">csv</a>
  &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
@@ -23375,6 +23615,12 @@ imported by:
  &#8226;   <a href="#PIL.features">PIL.features</a>
  &#8226;   <a href="#asyncio.staggered">asyncio.staggered</a>
  &#8226;   <a href="#asyncio.timeouts">asyncio.timeouts</a>
+ &#8226;   <a href="#charset_normalizer.api">charset_normalizer.api</a>
+ &#8226;   <a href="#charset_normalizer.cd">charset_normalizer.cd</a>
+ &#8226;   <a href="#charset_normalizer.constant">charset_normalizer.constant</a>
+ &#8226;   <a href="#charset_normalizer.legacy">charset_normalizer.legacy</a>
+ &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
+ &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
  &#8226;   <a href="#customtkinter.windows.ctk_input_dialog">customtkinter.windows.ctk_input_dialog</a>
  &#8226;   <a href="#customtkinter.windows.ctk_tk">customtkinter.windows.ctk_tk</a>
  &#8226;   <a href="#customtkinter.windows.ctk_toplevel">customtkinter.windows.ctk_toplevel</a>
@@ -23496,7 +23742,8 @@ imported by:
   <a name="unicodedata"></a>
   <tt>unicodedata</tt> <span class="moduletype"><tt>C:\Python312\DLLs\unicodedata.pyd</tt></span>  <div class="import">
 imported by:
-    <a href="#encodings.idna">encodings.idna</a>
+    <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#encodings.idna">encodings.idna</a>
  &#8226;   <a href="#re._parser">re._parser</a>
  &#8226;   <a href="#stringprep">stringprep</a>
  &#8226;   <a href="#traceback">traceback</a>
@@ -23966,6 +24213,7 @@ imported by:
  &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
  &#8226;   <a href="#backports.tarfile">backports.tarfile</a>
  &#8226;   <a href="#calendar">calendar</a>
+ &#8226;   <a href="#charset_normalizer.legacy">charset_normalizer.legacy</a>
  &#8226;   <a href="#codeop">codeop</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#customtkinter.windows.widgets.core_widget_classes.ctk_base_class">customtkinter.windows.widgets.core_widget_classes.ctk_base_class</a>

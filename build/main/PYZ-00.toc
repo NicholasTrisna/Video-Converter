@@ -392,6 +392,38 @@
   ('bisect', 'C:\\Python312\\Lib\\bisect.py', 'PYMODULE'),
   ('bz2', 'C:\\Python312\\Lib\\bz2.py', 'PYMODULE'),
   ('calendar', 'C:\\Python312\\Lib\\calendar.py', 'PYMODULE'),
+  ('charset_normalizer',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer.api',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\api.py',
+   'PYMODULE'),
+  ('charset_normalizer.cd',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\cd.py',
+   'PYMODULE'),
+  ('charset_normalizer.constant',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\constant.py',
+   'PYMODULE'),
+  ('charset_normalizer.legacy',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\legacy.py',
+   'PYMODULE'),
+  ('charset_normalizer.models',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\models.py',
+   'PYMODULE'),
+  ('charset_normalizer.utils',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\utils.py',
+   'PYMODULE'),
+  ('charset_normalizer.version',
+   'F:\\Projects\\Video '
+   'Converter\\myenv\\Lib\\site-packages\\charset_normalizer\\version.py',
+   'PYMODULE'),
   ('cmd', 'C:\\Python312\\Lib\\cmd.py', 'PYMODULE'),
   ('code', 'C:\\Python312\\Lib\\code.py', 'PYMODULE'),
   ('codeop', 'C:\\Python312\\Lib\\codeop.py', 'PYMODULE'),
