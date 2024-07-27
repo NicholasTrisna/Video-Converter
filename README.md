@@ -1,4 +1,4 @@
-# <h1 style="margin-bottom:25px;"><img src="https://redhalo.net/Images/logo.png" alt="Red Halo Logo" width="50">Red Halo Audio and Video Converter</h1>
+# <h1 style="margin-bottom:25px;"><img src="https://redhalo.net/Images/logo.png" alt="Red Halo Logo" width="50">Red Halo Video Converter</h1>
 
 
 
