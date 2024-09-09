@@ -7,6 +7,9 @@ import os
 from PIL import Image, ImageTk
 import threading
 import yt_dlp  # Import yt-dlp
+import pystray
+from pystray import MenuItem as item
+from PIL import Image as PILImage  # To avoid conflict with your PIL import
 
 class VideoConverterApp:
     def __init__(self, root):
@@ -19,6 +22,12 @@ class VideoConverterApp:
         # Load logo image
         self.logo_image = Image.open("F:/Projects/Video Converter/logo.png")
         self.logo = ImageTk.PhotoImage(self.logo_image)
+
+        # Create the system tray icon
+        self.setup_tray_icon()
+
+        # Bind minimize event
+        self.root.protocol("WM_DELETE_WINDOW", self.minimize_to_tray)
 
         # Main frame
         self.frame = ctk.CTkFrame(root, width=900, height=900, corner_radius=10, fg_color="#333333")
@@ -40,6 +49,26 @@ class VideoConverterApp:
         self.setup_home_tab()
         self.setup_video_tab()
         self.setup_youtube_tab()
+
+    def setup_tray_icon(self):
+        # Create an icon for the system tray
+        icon_image = PILImage.open("F:/Projects/Video Converter/myicon.ico")
+        self.tray_icon = pystray.Icon("Red Halo Converter", icon_image, menu=pystray.Menu(
+            item("Open", self.restore_from_tray),
+            item("Exit", self.exit_app)
+        ))
+
+    def minimize_to_tray(self):
+        self.root.withdraw()
+        threading.Thread(target=self.tray_icon.run).start()
+
+    def restore_from_tray(self):
+        self.root.deiconify()
+        self.tray_icon.stop()
+
+    def exit_app(self):
+        self.tray_icon.stop()
+        self.root.quit()
 
     def setup_home_tab(self):
         self.home_tab.grid_columnconfigure(0, weight=1)
