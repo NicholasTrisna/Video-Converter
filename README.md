@@ -18,42 +18,6 @@ Welcome to the Red Halo Video Converter! This application allows you to convert 
 
 [Download Version 1.0 LTS [Windows]](https://github.com/NicholasTrisna/Video-Converter/blob/main/dist/Red%20Halo%20Converter.exe)
 
-# Manual Installation
-### 1. Clone the Repository
-
-```
-git clone https://github.com/NicholasTrisna/Video-Converter.git
-cd Video-Converter
-```
-
-### 2. Set Up a Virtual Environment
-
-```
-python -m venv myenv
-```
-### 3. Activate the Virtual Environment
-- On Windows:
-```
-myenv\Scripts\activate
-```
-On macOS/Linux:
-```
-source myenv/bin/activate
-```
-### 4. Install Required Packages
-
-```
-pip install -r requirements.txt
-```
-### 4. Download FFmpeg
-- Download FFmpeg from FFmpeg Official Site.
-
-- Extract and place the binaries in a known location.
-
-- Update the path in main.py:
-```
-AudioSegment.converter = r"path_to_ffmpeg\ffmpeg.exe"
-```
 ## Usage
 ### 1. Run the Application
 ```
