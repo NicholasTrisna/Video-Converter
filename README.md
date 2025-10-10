@@ -17,9 +17,7 @@ Welcome to the Red Halo Video Converter! This application allows you to convert 
 
 ## Usage
 ### 1. Run the Application
-```
-python main.py
-```
+
 ### 2. Select Files
 - Click "Select File" to choose the audio or video file you want to convert.
   
