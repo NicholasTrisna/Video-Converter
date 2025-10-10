@@ -4,9 +4,6 @@
 
 Welcome to the Red Halo Video Converter! This application allows you to convert video files between various formats with ease.
 
-> [!IMPORTANT]
-> The Red Halo Converter is in a pre-alpha state, and only suitable for use by developers
-
 ## Features
 - Convert video files to formats like MP4, AVI, MOV, and more.
 - Batch processing for multiple files.
